@@ -242,3 +242,12 @@ snippet kwargs
 	**kwargs${1:,}${0}
 snippet akw
 	*args, **kwargs${1:,}${0}
+snippet opt
+	from optparse import OptionParser
+	parser = OptionParser()
+	parser.add_option('-v', dest='verbose', action='store_true')
+	parser.add_option('-n', dest='number', type='int', action='store')
+	parser.add_option('-c', '--config', dest='config', action='store',
+	                  type='string', help='specify the config file')
+
+	options, args = parser.parse_args()
